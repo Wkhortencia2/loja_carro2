@@ -4,8 +4,11 @@ function salvarCarros(event) {
 
     let titulo = document.getElementById('title').value;
     let preco = document.getElementById('preco').value;
+    let descricao = document.getElementById('descricao').value;
     let marca = document.getElementById('marca').value;
     let modelo = document.getElementById('modelo').value;
+    let kilometragem = document.getElementById('kilometragem').value
+    let data_compra = document.getElementById('data_compra').value
 
     let cambioSelecionado = document.querySelector('input[name="marcha"]:checked');
 
@@ -58,3 +61,14 @@ function salvarCarros(event) {
         adicionarNaTela(carro);
     }); 
     }
+
+            function excluirCarro(id, botao) {
+                let carros = JSON.parse(localStorage.getItem("carros")) || [];
+            
+                carros = carros.filter(carros => Number(carro.id) !== Number(id));
+
+                localStorage.setItem("carros", JSON.stringify(carros));
+
+
+
+            }
